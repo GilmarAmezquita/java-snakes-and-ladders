@@ -146,10 +146,12 @@ public class Matrix {
 		}
 	}
 	private void createLadders(int l) {
-		int start = getStartLadder();
-		int end = getEndLadder(start);
-		firstL = new Ladder(1, start, end);
-		createLadders(l, 2, firstL);
+		if(l>0) {
+			int start = getStartLadder();
+			int end = getEndLadder(start);
+			firstL = new Ladder(1, start, end);
+			createLadders(l, 2, firstL);
+		}
 	}
 	private void createLadders(int l, int currentL, Ladder current) {
 		if(currentL<=l) {
@@ -194,12 +196,14 @@ public class Matrix {
 	}
 	
 	private void createSnakes(int s) {
-		int start = getStartSnake();
-		int end = getEndSnake(start);
-		char snakeC = 'A';
-		firstS = new Snake(snakeC, start, end);
-		snakeC++;
-		createSnakes(s, 2, snakeC, firstS);
+		if(s>0) {
+			int start = getStartSnake();
+			int end = getEndSnake(start);
+			char snakeC = 'A';
+			firstS = new Snake(snakeC, start, end);
+			snakeC++;
+			createSnakes(s, 2, snakeC, firstS);
+		}
 	}
 	private void createSnakes(int s, int currentS,char snakeC, Snake current) {
 		if(currentS<=s) {

@@ -17,7 +17,7 @@ public class Menu {
 	private final static String SAVE_PATH_FILE_SCORES = "data/scores.sal";
 	
 	private final static int PLAY = 1;
-	private final static int PRINT_TABLE = 2;
+	private final static int PRINT_INFO = 2;
 	private final static int EXIT = 3;
 	
 	private Matrix matrix;
@@ -206,7 +206,7 @@ public class Menu {
 					play();
 				}
 				break;
-			case PRINT_TABLE:
+			case PRINT_INFO:
 				if(!winner) {
 					try {
 						System.out.println(matrix.getGame());
